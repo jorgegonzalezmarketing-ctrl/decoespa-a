@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deco España – Tapicería y Restauración | San Felipe, Chile</title>
+  <meta name="description" content="Deco España: Expertos en tapicería artesanal, retapizado de sillones, sofás y restauración de muebles en San Felipe, Chile. Cotiza por WhatsApp.">
+  <meta name="keywords" content="tapicería San Felipe, retapizado sillones, restauración muebles, cortinajes Chile, tapicería artesanal">
+  <meta name="author" content="Deco España">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://decoespana.cl/">
+  <meta property="og:title" content="Deco España – Tapicería y Restauración | San Felipe">
+  <meta property="og:description" content="Renovamos tus muebles con calidad artesanal. Cotiza por WhatsApp hoy.">
+  <meta property="og:image" content="https://decoespana.cl/assets/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Deco España",
+    "@id": "https://decoespana.cl/",
+    "url": "https://decoespana.cl/",
+    "telephone": "+56983119586",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Felipe",
+      "addressRegion": "Valparaíso",
+      "addressCountry": "CL"
+    },
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "19:00"},
+      {"@type": "OpeningHoursSpecification","dayOfWeek": "Saturday","opens": "10:00","closes": "14:00"}
+    ],
+    "sameAs": ["https://www.facebook.com/share/1D6K1GCjU8/", "https://www.instagram.com/decoespanasanfelipe"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #f7f3ee;
+      --warm:     #ede6dc;
+      --sand:     #c9b99a;
+      --terracota:#b5634a;
+      --olive:    #6b7c5e;
+      --dark:     #2c2420;
+      --mid:      #6b5f57;
+      --white:    #ffffff;
+      --wa:       #25d366;
+      --radius:   16px;
+      --radius-lg:28px;
+      --shadow:   0 4px 32px rgba(44,36,32,.10);
+      --shadow-lg:0 12px 64px rgba(44,36,32,.15);
+      --ff-display:"Cormorant Garamond", Georgia, serif;
+      --ff-body:  "DM Sans", system-ui, sans-serif;
+      --transition: .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--warm); }
+    ::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
+
+    /* ── UTIL ── */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-family: var(--ff-body);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--terracota);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--mid);
+      font-weight: 300;
+      max-width: 540px;
+    }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-family: var(--ff-body);
+      font-size: .95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--dark);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--terracota); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .btn-wa {
+      background: var(--wa);
+      color: var(--white);
+    }
+    .btn-wa:hover { background: #1eb358; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.30); }
+    .btn-outline {
+      background: transparent;
+      color: var(--dark);
+      border: 1.5px solid var(--sand);
+    }
+    .btn-outline:hover { background: var(--dark); color: var(--white); border-color: var(--dark); transform: translateY(-2px); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--wa);
+      color: var(--white);
+      padding: 14px 22px 14px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .9rem;
+      box-shadow: 0 8px 32px rgba(37,211,102,.40);
+      transition: var(--transition);
+      animation: float-pulse 3s infinite;
+    }
+    .wa-float:hover { background: #1eb358; transform: translateY(-3px) scale(1.03); }
+    .wa-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+    @keyframes float-pulse {
+      0%,100% { box-shadow: 0 8px 32px rgba(37,211,102,.40); }
+      50%      { box-shadow: 0 8px 48px rgba(37,211,102,.60); }
+    }
+    @media (max-width: 480px) {
+      .wa-float span { display: none; }
+      .wa-float { padding: 16px; border-radius: 50%; }
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      padding: 0;
+      transition: var(--transition);
+    }
+    header.scrolled {
+      background: rgba(247,243,238,.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(44,36,32,.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+      transition: padding var(--transition);
+    }
+    header.scrolled .nav-inner { padding: 14px 0; }
+
+    .logo-mark {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-mark .name {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--dark);
+      letter-spacing: .02em;
+      line-height: 1;
+    }
+    .logo-mark .tagline {
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-weight: 400;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 36px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--mid);
+      font-size: .88rem;
+      font-weight: 400;
+      letter-spacing: .02em;
+      transition: color var(--transition);
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--terracota);
+      transition: width var(--transition);
+    }
+    nav a:hover { color: var(--dark); }
+    nav a:hover::after { width: 100%; }
+
+    .nav-cta { margin-left: 12px; }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--dark); transition: var(--transition); border-radius: 2px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      padding-top: 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 70% 50%, rgba(201,185,154,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(181,99,74,.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-text {
+      padding: 80px 0 80px 0;
+      position: relative;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--warm);
+      border: 1px solid var(--sand);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--terracota);
+    }
+    .hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terracota);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--mid);
+      font-weight: 300;
+      max-width: 460px;
+      margin-bottom: 40px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+    .trust-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .88rem;
+      color: var(--mid);
+    }
+    .trust-item::before {
+      content: '';
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--olive);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--cream) 0%, transparent 20%);
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 40px;
+      right: 32px;
+      background: rgba(247,243,238,.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: badge-float 4s ease-in-out infinite;
+    }
+    .hero-badge-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .hero-badge-text .num {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .hero-badge-text .label {
+      font-size: .75rem;
+      color: var(--mid);
+    }
+    @keyframes badge-float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+      gap: 24px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s ease;
+    }
+    .service-card:hover .service-card-img { transform: scale(1.05); }
+    .service-card-body {
+      padding: 24px;
+    }
+    .service-card-icon {
+      width: 40px; height: 40px;
+      background: var(--warm);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+    .service-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: .88rem;
+      color: var(--mid);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .btn-service {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--terracota);
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: gap var(--transition);
+    }
+    .btn-service:hover { gap: 10px; }
+    .btn-service::after { content: '→'; }
+
+    /* ── GALLERY ── */
+    .gallery {
+      padding: 100px 0;
+      background: var(--dark);
+    }
+    .gallery .section-title { color: var(--cream); }
+    .gallery .section-label { color: var(--sand); }
+    .gallery .section-sub { color: var(--sand); max-width: 480px; }
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      gap: 24px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto auto;
+      gap: 12px;
+    }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44,36,32,.6) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity var(--transition);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span {
+      color: var(--white);
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .g1 { grid-column: span 5; height: 320px; }
+    .g2 { grid-column: span 4; height: 320px; }
+    .g3 { grid-column: span 3; height: 320px; }
+    .g4 { grid-column: span 4; height: 260px; }
+    .g5 { grid-column: span 5; height: 260px; }
+    .g6 { grid-column: span 3; height: 260px; }
+
+    /* ── PROCESS ── */
+    .process {
+      padding: 100px 0;
+      background: var(--warm);
+    }
+    .process-header { margin-bottom: 64px; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(12.5% + 24px);
+      right: calc(12.5% + 24px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--sand), var(--terracota), var(--sand));
+    }
+    .step {
+      padding: 0 20px;
+      text-align: center;
+    }
+    .step-num {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--terracota);
+      position: relative;
+      z-index: 1;
+      transition: var(--transition);
+    }
+    .step:hover .step-num {
+      background: var(--terracota);
+      color: var(--white);
+      border-color: var(--terracota);
+      transform: scale(1.1);
+    }
+    .step-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .step h3 {
+      font-family: var(--ff-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .step p { font-size: .88rem; color: var(--mid); line-height: 1.6; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+    .testimonials-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      gap: 24px;
+    }
+    .testi-nav {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .testi-btn {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid var(--sand);
+      background: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--dark);
+      transition: var(--transition);
+    }
+    .testi-btn:hover { background: var(--dark); color: var(--white); border-color: var(--dark); }
+    .testi-btn:disabled { opacity: .35; cursor: default; }
+    .testi-btn:disabled:hover { background: var(--white); color: var(--dark); border-color: var(--sand); }
+    .testimonials-wrapper {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+    .testimonials-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+      cursor: grab;
+      scroll-behavior: smooth;
+    }
+    .testimonials-track::-webkit-scrollbar { display: none; }
+    .testimonials-track.dragging { cursor: grabbing; scroll-behavior: auto; }
+    .testi-card {
+      min-width: 360px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      transition: transform var(--transition);
+      border: 1px solid rgba(201,185,154,.3);
+    }
+    .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .testi-stars { font-size: 1rem; margin-bottom: 16px; color: var(--terracota); letter-spacing: 2px; }
+    .testi-text {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--dark);
+      margin-bottom: 28px;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testi-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      color: var(--terracota);
+      font-weight: 400;
+      flex-shrink: 0;
+    }
+    .testi-name { font-weight: 500; font-size: .9rem; }
+    .testi-loc { font-size: .8rem; color: var(--mid); }
+
+    /* ── MATERIALS ── */
+    .materials {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .materials-header { margin-bottom: 56px; }
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+    .material-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .material-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .material-swatch {
+      height: 140px;
+      position: relative;
+    }
+    .material-swatch img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .material-info {
+      padding: 16px;
+      background: var(--cream);
+    }
+    .material-info h3 { font-family: var(--ff-display); font-size: 1rem; font-weight: 400; margin-bottom: 4px; }
+    .material-info p { font-size: .78rem; color: var(--mid); line-height: 1.4; }
+
+    /* ── CTA FINAL ── */
+    .final-cta {
+      padding: 120px 0;
+      background: var(--dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 30% 50%, rgba(181,99,74,.15) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 30%, rgba(107,124,94,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .final-cta-inner { position: relative; }
+    .final-cta .section-label { color: var(--sand); }
+    .final-cta h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.15;
+      max-width: 660px;
+      margin: 0 auto 20px;
+    }
+    .final-cta h2 em { font-style: italic; color: var(--terracota); }
+    .final-cta p { color: var(--sand); font-size: 1.05rem; margin-bottom: 44px; font-weight: 300; }
+    .final-cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .cta-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--sand);
+      font-size: .85rem;
+    }
+    .cta-note::before { content: '⏱'; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1310;
+      padding: 64px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .name {
+      font-family: var(--ff-display);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: .88rem;
+      color: var(--mid);
+      line-height: 1.7;
+      max-width: 300px;
+      margin-bottom: 24px;
+    }
+    .social-row {
+      display: flex;
+      gap: 12px;
+    }
+    .social-link {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sand);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .social-link:hover { background: var(--terracota); color: var(--white); }
+    .social-link svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .footer-col h4 {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      font-size: .88rem;
+      color: var(--mid);
+      margin-bottom: 10px;
+    }
+    .footer-col li strong { color: var(--cream); font-weight: 400; }
+    .footer-col a {
+      color: var(--mid);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: var(--terracota); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer-bottom p { font-size: .8rem; color: var(--mid); }
+
+    /* ── MOBILE MENU ── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      z-index: 850;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      transform: translateX(100%);
+      transition: transform .4s ease;
+    }
+    .mobile-nav.open { transform: translateX(0); }
+    .mobile-nav a {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--dark);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--terracota); }
+    .mobile-close {
+      position: absolute;
+      top: 28px; right: 28px;
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--mid);
+      background: none;
+      border: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .materials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      nav ul, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: flex; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-visual { height: 50vw; min-height: 280px; }
+      .hero-visual-overlay { background: linear-gradient(180deg, transparent 0%, var(--cream) 90%); }
+      .hero-badge { left: 16px; bottom: -20px; }
+      .hero-text { padding: 100px 0 40px; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .process-steps::before { display: none; }
+      .services-header, .gallery-header { flex-direction: column; align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero-actions { flex-direction: column; }
+      .btn { justify-content: center; text-align: center; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .g1,.g2,.g3,.g4,.g5,.g6 { grid-column: span 1; height: 200px; }
+      .materials-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .testi-card { min-width: 290px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20un%20trabajo%20de%20tapicería" class="wa-float" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.527 5.845L.057 23.882l6.204-1.627A11.936 11.936 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.003-1.367l-.36-.214-3.714.975.99-3.62-.233-.373A9.81 9.81 0 012.18 12c0-5.42 4.41-9.818 9.82-9.818 5.41 0 9.818 4.398 9.818 9.818S17.41 21.818 12 21.818z"/></svg>
+    <span>Cotizar ahora</span>
+  </a>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="#hero" onclick="closeMobileNav()">Inicio</a>
+    <a href="#services" onclick="closeMobileNav()">Servicios</a>
+    <a href="#gallery" onclick="closeMobileNav()">Galería</a>
+    <a href="#process" onclick="closeMobileNav()">Cómo trabajamos</a>
+    <a href="#testimonials" onclick="closeMobileNav()">Testimonios</a>
+    <a href="https://www.facebook.com/share/1D6K1GCjU8/" onclick="closeMobileNav()" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/decoespanasanfelipe?igsh=MWozNWxwdmVoYWdsZA==" onclick="closeMobileNav()" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar" class="btn btn-wa" target="_blank" rel="noopener" style="margin-top:16px;">💬 WhatsApp</a>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="logo-mark">
+          <span class="name">Deco España</span>
+          <span class="tagline">Tapicería · San Felipe</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#gallery">Galería</a></li>
+            <li><a href="#process">Proceso</a></li>
+            <li><a href="#testimonials">Testimonios</a></li>
+          </ul>
+        </nav>
+        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar" class="btn btn-wa nav-cta" target="_blank" rel="noopener">
+          💬 Cotizar
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container hero-text reveal">
+      <div class="hero-eyebrow">San Felipe, Chile · Desde hace años</div>
+      <h1>Renovamos tus<br>muebles con<br><em>calidad artesanal</em></h1>
+      <p class="hero-sub">Retapizamos sillones, sofás y living. Restauramos muebles. Fabricamos cortinajes. Terminaciones que duran.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20un%20trabajo%20de%20tapicería" class="btn btn-wa" target="_blank" rel="noopener">
+          💬 Cotizar por WhatsApp
+        </a>
+        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20te%20envío%20fotos%20de%20mi%20mueble%20para%20que%20me%20coticen" class="btn btn-outline" target="_blank" rel="noopener">
+          📷 Enviar foto de mi mueble
+        </a>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-item">Atención personalizada desde el primer mensaje</div>
+        <div class="trust-item">Retiro y entrega coordinada en la zona</div>
+        <div class="trust-item">Tapicería y restauración profesional artesanal</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80&auto=format&fit=crop" alt="Sillón tapizado elegante" loading="eager">
+      <div class="hero-visual-overlay"></div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">🧡</div>
+        <div class="hero-badge-text">
+          <div class="num">Deco España</div>
+          <div class="label">Siempre desde el cariño</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="services-header">
+        <div>
+          <div class="section-label reveal">Nuestros servicios</div>
+          <h2 class="section-title reveal">Todo lo que<br>tus muebles necesitan</h2>
+        </div>
+        <p class="section-sub reveal">Especializados en devolverle vida a tus muebles favoritos con materiales premium y técnicas artesanales.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=75&auto=format&fit=crop" alt="Retapizado de sillones" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-card-icon">🛋️</div>
+            <h3>Retapizado de Sillones</h3>
+            <p>Renovamos tela, espuma y relleno con materiales premium. Tu sillón como nuevo, sin cambiarlo.</p>
+            <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20retapizado%20de%20sillón" class="btn-service" target="_blank" rel="noopener">Cotizar ahora</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=75&auto=format&fit=crop" alt="Restauración de muebles" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-card-icon">🪑</div>
+            <h3>Restauración de Muebles</h3>
+            <p>Reparamos estructura, barnizamos y recuperamos el esplendor original de piezas antiguas y clásicas.</p>
+            <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20restauración%20de%20muebles" class="btn-service" target="_blank" rel="noopener">Cotizar ahora</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?w=600&q=75&auto=format&fit=crop" alt="Cortinajes premium" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-card-icon">🪟</div>
+            <h3>Cortinaje a Medida</h3>
+            <p>Diseñamos y confeccionamos cortinas para cada ambiente. Instalación incluida con terminaciones perfectas.</p>
+            <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20cortinaje" class="btn-service" target="_blank" rel="noopener">Cotizar ahora</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=75&auto=format&fit=crop" alt="Tapicería de sillas" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-card-icon">✂️</div>
+            <h3>Tapicería de Sillas</h3>
+            <p>Retapizamos sillas de comedor, de oficina y de cualquier estilo con telas de amplia variedad.</p>
+            <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20tapicería%20de%20sillas" class="btn-service" target="_blank" rel="noopener">Cotizar ahora</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=600&q=75&auto=format&fit=crop" alt="Renovación de living" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-card-icon">🏠</div>
+            <h3>Renovación de Living</h3>
+            <p>Transformamos tu sala completa: sofás, sillones y detalles coordinados para un resultado de revista.</p>
+            <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20renovación%20de%20mi%20living" class="btn-service" target="_blank" rel="noopener">Cotizar ahora</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=75&auto=format&fit=crop" alt="Cambio de telas y espumas" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-card-icon">🧵</div>
+            <h3>Cambio de Telas y Espumas</h3>
+            <p>Renovamos el tapizado sin alterar la estructura. Espumas de alta densidad para mayor comodidad.</p>
+            <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20cambio%20de%20tela%20y%20espuma" class="btn-service" target="_blank" rel="noopener">Cotizar ahora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <div>
+          <div class="section-label reveal">Nuestro trabajo</div>
+          <h2 class="section-title reveal">Transformamos muebles<br><em style="font-style:italic;color:var(--sand)">en piezas únicas</em></h2>
+        </div>
+        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20ver%20más%20trabajos" class="btn btn-outline reveal" style="border-color:var(--mid);color:var(--cream);" target="_blank" rel="noopener">Ver más trabajos</a>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item g1 reveal">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=75&auto=format&fit=crop" alt="Sofá restaurado" loading="lazy">
+          <div class="gallery-overlay"><span>Sofá restaurado</span></div>
+        </div>
+        <div class="gallery-item g2 reveal">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=75&auto=format&fit=crop" alt="Sillón retapizado" loading="lazy">
+          <div class="gallery-overlay"><span>Sillón retapizado</span></div>
+        </div>
+        <div class="gallery-item g3 reveal">
+          <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=500&q=75&auto=format&fit=crop" alt="Sillas tapizadas" loading="lazy">
+          <div class="gallery-overlay"><span>Sillas tapizadas</span></div>
+        </div>
+        <div class="gallery-item g4 reveal">
+          <img src="https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?w=600&q=75&auto=format&fit=crop" alt="Cortinaje premium" loading="lazy">
+          <div class="gallery-overlay"><span>Cortinaje</span></div>
+        </div>
+        <div class="gallery-item g5 reveal">
+          <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=700&q=75&auto=format&fit=crop" alt="Living renovado" loading="lazy">
+          <div class="gallery-overlay"><span>Living renovado</span></div>
+        </div>
+        <div class="gallery-item g6 reveal">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500&q=75&auto=format&fit=crop" alt="Restauración artesanal" loading="lazy">
+          <div class="gallery-overlay"><span>Restauración</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="process">
+    <div class="container">
+      <div class="process-header">
+        <div class="section-label reveal">Simple y transparente</div>
+        <h2 class="section-title reveal">Cómo trabajamos</h2>
+        <p class="section-sub reveal">Un proceso pensado para que todo sea fácil y sin sorpresas.</p>
+      </div>
+      <div class="process-steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <div class="step-icon">📸</div>
+          <h3>Nos envías fotos</h3>
+          <p>Mándanos fotos del mueble por WhatsApp. Sin moverte de tu casa.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <div class="step-icon">💬</div>
+          <h3>Evaluamos y cotizamos</h3>
+          <p>Revisamos el estado y te enviamos una cotización clara y sin letra chica.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <div class="step-icon">🪡</div>
+          <h3>Restauramos</h3>
+          <p>Coordinamos el retiro o la visita. Trabajamos con precisión artesanal.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">04</div>
+          <div class="step-icon">✨</div>
+          <h3>Entrega final</h3>
+          <p>Devolvemos tu mueble renovado. Garantía en materiales y terminaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div>
+          <div class="section-label reveal">Lo que dicen</div>
+          <h2 class="section-title reveal">Clientes que<br>volvieron a enamorarse<br><em style="font-style:italic;color:var(--terracota)">de sus muebles</em></h2>
+        </div>
+        <div class="testi-nav reveal">
+          <button class="testi-btn" id="testiPrev" aria-label="Anterior">←</button>
+          <button class="testi-btn" id="testiNext" aria-label="Siguiente">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="testimonials-wrapper">
+      <div class="testimonials-track" id="testiTrack">
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Mi sillón quedó increíble. Lo tenía hace 15 años y quedó mejor que cuando lo compré. Mil gracias al equipo de Deco España."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div>
+              <div class="testi-name">María González</div>
+              <div class="testi-loc">San Felipe, Chile</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Muy responsables y detallistas. El retapizado de mi living transformó completamente el ambiente. Lo recomiendo con los ojos cerrados."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">C</div>
+            <div>
+              <div class="testi-name">Carlos Rojas</div>
+              <div class="testi-loc">Los Andes, Chile</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"La calidad superó mis expectativas. Les mandé foto por WhatsApp, cotizaron rápido, vinieron a buscar el sillón y lo devolvieron perfecto."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Ana Leiva</div>
+              <div class="testi-loc">Putaendo, Chile</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Excelente servicio. Restauraron un sillón familiar antiguo con tanto cuidado y respeto... quedé emocionada con el resultado."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">P</div>
+            <div>
+              <div class="testi-name">Patricia Molina</div>
+              <div class="testi-loc">San Felipe, Chile</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Los cortinajes quedaron espectaculares. Vinieron a medir, fabricaron todo a medida e instalaron en un día. Trato genial."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Roberto Fuentes</div>
+              <div class="testi-loc">Llaillay, Chile</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div><!-- /wrapper -->
+    </div>
+  </section>
+
+  <!-- Materials -->
+  <section id="materials" class="materials">
+    <div class="container">
+      <div class="materials-header">
+        <div class="section-label reveal">Materiales</div>
+        <h2 class="section-title reveal">Telas y materiales<br>de calidad premium</h2>
+        <p class="section-sub reveal">Seleccionamos las mejores telas para garantizar durabilidad y estilo en cada trabajo.</p>
+      </div>
+      <div class="materials-grid">
+        <div class="material-card reveal">
+          <div class="material-swatch">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&q=75&auto=format&fit=crop" alt="Lino natural" loading="lazy">
+          </div>
+          <div class="material-info">
+            <h3>Lino Natural</h3>
+            <p>Transpirable y elegante. Ideal para estilos rústicos y nórdicos.</p>
+          </div>
+        </div>
+        <div class="material-card reveal">
+          <div class="material-swatch">
+            <img src="https://images.unsplash.com/photo-1615529162924-f8605388461d?w=400&q=75&auto=format&fit=crop" alt="Chenille" loading="lazy">
+          </div>
+          <div class="material-info">
+            <h3>Chenille Suave</h3>
+            <p>Textura aterciopelada, resistente y muy cómoda.</p>
+          </div>
+        </div>
+        <div class="material-card reveal">
+          <div class="material-swatch">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&q=75&auto=format&fit=crop" alt="Felpa premium" loading="lazy">
+          </div>
+          <div class="material-info">
+            <h3>Felpa Premium</h3>
+            <p>Suave al tacto, cálida y lujosa para ambientes de descanso.</p>
+          </div>
+        </div>
+        <div class="material-card reveal">
+          <div class="material-swatch">
+            <img src="https://images.unsplash.com/photo-1549187774-b4e9b0445b41?w=400&q=75&auto=format&fit=crop" alt="Cuero sintético" loading="lazy">
+          </div>
+          <div class="material-info">
+            <h3>Cuero Sintético</h3>
+            <p>Aspecto de cuero real, fácil de limpiar y muy resistente.</p>
+          </div>
+        </div>
+        <div class="material-card reveal">
+          <div class="material-swatch">
+            <img src="https://images.unsplash.com/photo-1603512500383-dad30b5e3bba?w=400&q=75&auto=format&fit=crop" alt="Tela verde oliva" loading="lazy">
+          </div>
+          <div class="material-info">
+            <h3>Verde Oliva</h3>
+            <p>Tonalidad trendy y versátil. Combina con madera clara y ambientes modernos.</p>
+          </div>
+        </div>
+        <div class="material-card reveal">
+          <div class="material-swatch">
+            <img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=400&q=75&auto=format&fit=crop" alt="Terracota" loading="lazy">
+          </div>
+          <div class="material-info">
+            <h3>Terracota Premium</h3>
+            <p>Color cálido y acogedor. Aporta personalidad sin perder elegancia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <div class="section-label reveal">¿Listo para renovar?</div>
+      <h2 class="reveal">¿Quieres renovar tus muebles<br><em>sin comprar nuevos?</em></h2>
+      <p class="reveal">Envíanos una foto y te ayudamos a darles una segunda vida con calidad artesanal.</p>
+      <div class="final-cta-actions reveal">
+        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20un%20trabajo%20de%20tapicería" class="btn btn-wa" target="_blank" rel="noopener" style="font-size:1.05rem;padding:18px 40px;">
+          💬 Hablar por WhatsApp
+        </a>
+        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20te%20envío%20fotos%20de%20mi%20mueble" class="btn btn-outline" target="_blank" rel="noopener" style="color:var(--cream);border-color:rgba(201,185,154,.4);">
+          📷 Enviar fotos de mi mueble
+        </a>
+      </div>
+      <div class="cta-note reveal">Respuesta en menos de 24 horas · Atención personalizada</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="name">Deco España</div>
+          <p>Tapicería artesanal, restauración de muebles y cortinajes a medida. Más de 4.200 clientes que confiaron en nosotros en San Felipe y la región.</p>
+          <div class="social-row">
+            <a href="https://www.facebook.com/share/1D6K1GCjU8/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.35C0 23.407.593 24 1.325 24h11.49v-9.294h-3.126V9.294h3.126V6.637c0-3.1 1.893-4.788 4.66-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.003c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.467 3.656h-3.12v9.294H22.675c.732 0 1.325-.593 1.325-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/decoespanasanfelipe?igsh=MWozNWxwdmVoYWdsZA==" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/56983119586" class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.527 5.845L.057 23.882l6.204-1.627A11.936 11.936 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.003-1.367l-.36-.214-3.714.975.99-3.62-.233-.373A9.81 9.81 0 012.18 12c0-5.42 4.41-9.818 9.82-9.818 5.41 0 9.818 4.398 9.818 9.818S17.41 21.818 12 21.818z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="https://wa.me/56983119586?text=Retapizado%20sillones">Retapizado de Sillones</a></li>
+            <li><a href="https://wa.me/56983119586?text=Restauración%20muebles">Restauración de Muebles</a></li>
+            <li><a href="https://wa.me/56983119586?text=Cortinaje">Cortinaje a Medida</a></li>
+            <li><a href="https://wa.me/56983119586?text=Tapicería%20sillas">Tapicería de Sillas</a></li>
+            <li><a href="https://wa.me/56983119586?text=Renovación%20living">Renovación de Living</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><strong>Ubicación:</strong> San Felipe, Valparaíso</li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/56983119586">+56 9 1234 5678</a></li>
+            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1D6K1GCjU8/" target="_blank" rel="noopener">Deco España</a></li>
+            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/decoespanasanfelipe?igsh=MWozNWxwdmVoYWdsZA==" target="_blank" rel="noopener">@decoespanasanfelipe</a></li>
+            <li><strong>Lun–Vie:</strong> 09:00 – 19:00</li>
+            <li><strong>Sábado:</strong> 10:00 – 14:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Deco España · Tapicería y Restauración Artesanal</p>
+        <p>San Felipe, Región de Valparaíso, Chile</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── HEADER SCROLL ──
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ── MOBILE NAV ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+    document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+    function closeMobileNav() { mobileNav.classList.remove('open'); }
+
+    // ── REVEAL ON SCROLL ──
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── TESTIMONIALS ──
+    const track = document.getElementById('testiTrack');
+    const btnPrev = document.getElementById('testiPrev');
+    const btnNext = document.getElementById('testiNext');
+
+    function getCardWidth() {
+      const card = track.querySelector('.testi-card');
+      if (!card) return 384;
+      return card.offsetWidth + 24; // card + gap
+    }
+
+    function updateBtns() {
+      btnPrev.disabled = track.scrollLeft < 10;
+      btnNext.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 10;
+    }
+
+    btnPrev.addEventListener('click', () => {
+      track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+    });
+    btnNext.addEventListener('click', () => {
+      track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+    });
+    track.addEventListener('scroll', updateBtns, { passive: true });
+    updateBtns();
+
+    // drag-to-scroll
+    let isDown = false, startX, scrollLeft;
+    track.addEventListener('mousedown', e => {
+      isDown = true;
+      track.classList.add('dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+    track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('dragging'); });
+    track.addEventListener('mouseup',    () => { isDown = false; track.classList.remove('dragging'); });
+    track.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      track.scrollLeft = scrollLeft - (x - startX) * 1.2;
+    });
+
+    // touch support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) track.scrollBy({ left: diff > 0 ? getCardWidth() : -getCardWidth(), behavior: 'smooth' });
+    }, { passive: true });
+
+    // ── SMOOTH NAV SCROLL ──
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
