@@ -489,7 +489,7 @@
       position: absolute;
       bottom: 100px;
       left: -36px;
-      background: rgba(247,243,238,.97);
+      background: color-mix(in oklab, rgba(247,243,238,.97), rgba(26,21,16,.95) calc(var(--t) * 100%));
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-radius: var(--radius-lg);
@@ -1706,28 +1706,7 @@
       };
       rollerSlider.addEventListener('input', e => setBlind(e.target.value));
       setBlind(rollerSlider.value);
-
-      // Auto-demo una sola vez: barre día → noche → día para invitar a jugar.
-      let demoed = false;
-      new IntersectionObserver((entries, obs) => {
-        entries.forEach(en => {
-          if (!en.isIntersecting || demoed) return;
-          demoed = true;
-          obs.disconnect();
-          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-          const base = 10, amp = 82, dur = 3400;
-          let start = null;
-          const tick = ts => {
-            if (!start) start = ts;
-            const p = Math.min(1, (ts - start) / dur);
-            const val = base + amp * Math.sin(p * Math.PI); // 10 → 92 → 10
-            rollerSlider.value = val; setBlind(val);
-            if (p < 1) requestAnimationFrame(tick);
-            else { rollerSlider.value = base; setBlind(base); }
-          };
-          requestAnimationFrame(tick);
-        });
-      }, { threshold: .4 }).observe(rollerWindow);
+      // Sin auto-demo: el cambio día/noche es un elemento sorpresa que se descubre al mover la cortina.
     }
 
     // ── FAQ ACCORDION ──
