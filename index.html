@@ -84,6 +84,7 @@
           "@type": "OfferCatalog",
           "name": "Servicios de tapicería y restauración",
           "itemListElement": [
+            {"@type": "Offer","itemOffered": {"@type": "Service","name": "Cortinas roller a medida (blackout, sunscreen, dúo y translúcidas)"}},
             {"@type": "Offer","itemOffered": {"@type": "Service","name": "Retapizado de sillones"}},
             {"@type": "Offer","itemOffered": {"@type": "Service","name": "Restauración de muebles"}},
             {"@type": "Offer","itemOffered": {"@type": "Service","name": "Cortinaje a medida"}},
@@ -106,6 +107,11 @@
         "@type": "FAQPage",
         "@id": "https://decoespana.cl/#faq",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué tipos de cortinas roller ofrecen?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Fabricamos cortinas roller a medida en blackout (oscuridad total), sunscreen (filtran el sol sin perder la vista), dúo día y noche y translúcidas. Te asesoramos según cada ambiente, medimos a domicilio e instalamos en tu hogar."}
+          },
           {
             "@type": "Question",
             "name": "¿En qué zonas trabajan?",
@@ -516,6 +522,86 @@
     @keyframes badge-float {
       0%,100% { transform: translateY(0); }
       50%      { transform: translateY(-8px); }
+    }
+
+    /* ── CORTINAS ROLLER (servicio destacado) ── */
+    .rollers { position: relative; padding: 110px 0; overflow: hidden;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--warm) 100%); }
+    .rollers::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 55% at 88% 12%, rgba(181,99,74,.10), transparent 60%),
+        radial-gradient(ellipse 45% 50% at 4% 92%, rgba(107,124,94,.10), transparent 60%); }
+    .rollers-inner { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+
+    /* ventana interactiva */
+    .roller-demo { display: flex; flex-direction: column; gap: 18px; align-items: center; }
+    .roller-window {
+      --b: .55;
+      position: relative; width: 100%; max-width: 380px; aspect-ratio: 5 / 6;
+      border-radius: 22px; overflow: hidden; border: 10px solid #fff;
+      box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(44,36,32,.06);
+      background: #cfe6f2;
+    }
+    .roller-scene { position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 72% 22%, rgba(255,226,150,.95), rgba(255,226,150,0) 38%),
+        linear-gradient(180deg, #bfe0ef 0%, #dceef0 45%, #e7efd9 75%, #d6e3c6 100%); }
+    .roller-scene::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 34%;
+      background: radial-gradient(120% 100% at 50% 100%, #c2cf9f 0%, #b7c794 60%, transparent 100%); opacity: .7; }
+    .roller-dim { position: absolute; inset: 0; background: #2c2420; pointer-events: none;
+      opacity: calc(var(--b) * .62); transition: opacity .12s linear; }
+    .roller-tube { position: absolute; top: 0; left: 0; right: 0; height: 16px; z-index: 3;
+      background: linear-gradient(180deg, #6b5f57, #4a4039); box-shadow: 0 3px 8px rgba(0,0,0,.25); }
+    .roller-fabric { position: absolute; top: 0; left: 0; right: 0; z-index: 2; height: calc(var(--b) * 100%);
+      background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,.035) 0 2px, transparent 2px 5px),
+        repeating-linear-gradient(90deg, rgba(0,0,0,.04) 0 1px, transparent 1px 4px),
+        linear-gradient(180deg, #ece2d4, #d9c9b4);
+      box-shadow: 0 6px 14px rgba(44,36,32,.20); transition: height .12s linear; }
+    .roller-rail { position: absolute; left: 0; right: 0; bottom: 0; height: 12px;
+      background: linear-gradient(180deg, #b59a7c, #8a715a); border-radius: 0 0 3px 3px; }
+    .roller-rail::after { content: ''; position: absolute; right: 20px; top: 100%; width: 2px; height: 18px; background: #8a715a; }
+
+    .roller-control { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 8px; }
+    .roller-control-label { font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mid); text-align: center; }
+    .roller-control input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 50px;
+      background: linear-gradient(90deg, #ffd27a, var(--terracota)); cursor: pointer; }
+    .roller-control input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%;
+      background: #fff; border: 2px solid var(--terracota); box-shadow: var(--shadow); cursor: grab; }
+    .roller-control input[type=range]::-moz-range-thumb { width: 26px; height: 26px; border-radius: 50%;
+      background: #fff; border: 2px solid var(--terracota); box-shadow: var(--shadow); cursor: grab; }
+    .roller-control input[type=range]:focus-visible { outline: 2px solid var(--terracota); outline-offset: 6px; }
+    .roller-control-ends { display: flex; justify-content: space-between; font-size: .8rem; color: var(--mid); }
+
+    .rollers-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--terracota); color: #fff;
+      padding: 6px 14px; border-radius: 50px; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; margin-bottom: 18px; }
+    .rollers-badge svg { width: 14px; height: 14px; }
+    .rollers h2 { font-family: var(--ff-display); font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 300; line-height: 1.12; color: var(--dark); margin-bottom: 18px; }
+    .rollers h2 em { font-style: italic; color: var(--terracota); }
+    .rollers-lead { font-size: 1.18rem; color: var(--mid); font-weight: 300; line-height: 1.7; max-width: 520px; margin-bottom: 26px; }
+    .roller-benefits { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-bottom: 32px; }
+    .roller-benefit { display: flex; align-items: center; gap: 9px; font-size: 1rem; color: var(--dark); }
+    .roller-benefit svg { width: 20px; height: 20px; color: var(--olive); flex-shrink: 0; }
+    .rollers-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .roller-types { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 72px; }
+    .roller-type { background: rgba(255,255,255,.7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(201,185,154,.5); border-radius: var(--radius-lg); padding: 30px 24px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
+    .roller-type:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--terracota); }
+    .roller-type-icon { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, var(--warm), #e8d5c0);
+      display: flex; align-items: center; justify-content: center; color: var(--terracota); margin-bottom: 18px; }
+    .roller-type-icon svg { width: 26px; height: 26px; }
+    .roller-type h3 { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 400; margin-bottom: 8px; }
+    .roller-type p { font-size: .98rem; color: var(--mid); line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .rollers-inner { grid-template-columns: 1fr; gap: 40px; }
+      .roller-demo { order: -1; }
+      .roller-types { grid-template-columns: repeat(2, 1fr); margin-top: 48px; }
+    }
+    @media (max-width: 560px) {
+      .roller-types { grid-template-columns: 1fr; }
     }
 
     /* ── SERVICES ── */
@@ -1060,6 +1146,7 @@
   <div class="mobile-nav" id="mobileNav">
     <button class="mobile-close" id="mobileClose">✕</button>
     <a href="#hero" onclick="closeMobileNav()">Inicio</a>
+    <a href="#rollers" onclick="closeMobileNav()">Cortinas Roller</a>
     <a href="#services" onclick="closeMobileNav()">Servicios</a>
     <a href="#gallery" onclick="closeMobileNav()">Galería</a>
     <a href="#process" onclick="closeMobileNav()">Cómo trabajamos</a>
@@ -1080,6 +1167,7 @@
         </div>
         <nav>
           <ul>
+            <li><a href="#rollers">Cortinas Roller</a></li>
             <li><a href="#services">Servicios</a></li>
             <li><a href="#gallery">Galería</a></li>
             <li><a href="#process">Proceso</a></li>
@@ -1128,6 +1216,91 @@
           <div class="num">Deco España</div>
           <div class="label">Siempre desde el cariño</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cortinas Roller (servicio destacado) -->
+  <section id="rollers" class="rollers">
+    <div class="container rollers-inner">
+      <!-- Ventana interactiva -->
+      <div class="roller-demo reveal-left">
+        <div class="roller-window" id="rollerWindow" style="--b:.55">
+          <div class="roller-scene"></div>
+          <div class="roller-dim"></div>
+          <div class="roller-fabric"><div class="roller-rail"></div></div>
+          <div class="roller-tube"></div>
+        </div>
+        <label class="roller-control">
+          <span class="roller-control-label">Desliza y mira cómo controlas la luz</span>
+          <input type="range" id="rollerSlider" min="0" max="100" value="55" aria-label="Subir o bajar la cortina roller para controlar la luz">
+          <span class="roller-control-ends"><span>Más luz</span><span>Más sombra</span></span>
+        </label>
+      </div>
+      <!-- Texto -->
+      <div class="rollers-text reveal-right">
+        <span class="rollers-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 6.3L21 9l-5 4.3L17.6 20 12 16.4 6.4 20 8 13.3 3 9l6.4-.7z"/></svg>
+          Servicio destacado
+        </span>
+        <h2>Cortinas Roller<br><em>a medida</em></h2>
+        <p class="rollers-lead">El toque moderno que tu casa estaba pidiendo. Controla la luz, ganas privacidad y le das a cada ambiente un estilo limpio y actual. Las fabricamos e instalamos a tu medida exacta en San Felipe y todo el Valle de Aconcagua.</p>
+        <div class="roller-benefits">
+          <span class="roller-benefit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="8" width="20" height="8" rx="1.5"/><path d="M7 8v3M12 8v4M17 8v3"/></svg>
+            A medida exacta
+          </span>
+          <span class="roller-benefit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/></svg>
+            Medición a domicilio
+          </span>
+          <span class="roller-benefit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+            Instalación incluida
+          </span>
+          <span class="roller-benefit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><circle cx="12" cy="11" r="2.3"/></svg>
+            Filtran el sol y el calor
+          </span>
+        </div>
+        <div class="rollers-actions">
+          <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quiero%20cotizar%20cortinas%20roller%20a%20medida" class="btn btn-wa" target="_blank" rel="noopener">💬 Cotizar mis cortinas roller</a>
+          <a href="#rollerTypes" class="btn btn-outline">Ver tipos de roller</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tipos de roller -->
+    <div class="container">
+      <div class="roller-types" id="rollerTypes">
+        <article class="roller-type reveal-scale">
+          <div class="roller-type-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8Z"/></svg>
+          </div>
+          <h3>Blackout</h3>
+          <p>Oscuridad total: la luz no pasa. Ideal para dormitorios y salas de TV.</p>
+        </article>
+        <article class="roller-type reveal-scale">
+          <div class="roller-type-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/></svg>
+          </div>
+          <h3>Sunscreen</h3>
+          <p>Filtra el sol y baja el calor sin perder la vista hacia afuera. Perfecta para living y oficinas.</p>
+        </article>
+        <article class="roller-type reveal-scale">
+          <div class="roller-type-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="2.4" rx="1.2"/><rect x="3" y="9" width="18" height="2.4" rx="1.2" opacity=".4"/><rect x="3" y="14" width="18" height="2.4" rx="1.2"/><rect x="3" y="19" width="18" height="2.4" rx="1.2" opacity=".4"/></svg>
+          </div>
+          <h3>Dúo Día y Noche</h3>
+          <p>Franjas que alternan entre luz y privacidad con un solo movimiento.</p>
+        </article>
+        <article class="roller-type reveal-scale">
+          <div class="roller-type-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="10" r="3.2"/><path d="M4 17h16M6 21h12"/></svg>
+          </div>
+          <h3>Translúcida</h3>
+          <p>Deja entrar una luz suave y difusa mientras mantiene tu privacidad.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -1365,6 +1538,10 @@
       </div>
       <div class="faq-list">
         <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">¿Qué tipos de cortinas roller ofrecen?<span class="icon"></span></button>
+          <div class="faq-a"><p>Fabricamos cortinas roller a medida en blackout (oscuridad total), sunscreen (filtran el sol sin perder la vista), dúo día y noche y translúcidas. Te asesoramos según cada ambiente, medimos a domicilio e instalamos en tu hogar.</p></div>
+        </div>
+        <div class="faq-item reveal">
           <button class="faq-q" aria-expanded="false">¿En qué zonas trabajan?<span class="icon"></span></button>
           <div class="faq-a"><p>Atendemos en San Felipe y todo el Valle de Aconcagua: Los Andes, Putaendo, Llay Llay, Santa María y Catemu. Coordinamos el retiro y la entrega del mueble en la zona.</p></div>
         </div>
@@ -1489,6 +1666,41 @@
         const y = window.scrollY;
         if (y < window.innerHeight) heroVisual.style.transform = `translateY(${y * 0.10}px)`;
       }, { passive: true });
+    }
+
+    // ── CORTINAS ROLLER: control de luz ──
+    const rollerSlider = document.getElementById('rollerSlider');
+    const rollerWindow = document.getElementById('rollerWindow');
+    if (rollerSlider && rollerWindow) {
+      const setBlind = v => {
+        const b = Math.min(100, Math.max(0, v)) / 100;
+        rollerWindow.style.setProperty('--b', b);
+      };
+      rollerSlider.addEventListener('input', e => setBlind(e.target.value));
+      setBlind(rollerSlider.value);
+
+      // Auto-demo una sola vez cuando la ventana entra en pantalla
+      let demoed = false;
+      new IntersectionObserver((entries, obs) => {
+        entries.forEach(en => {
+          if (!en.isIntersecting || demoed) return;
+          demoed = true;
+          obs.disconnect();
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          const from = 12, to = 58, dur = 1600;
+          let start = null;
+          rollerSlider.value = from; setBlind(from);
+          const step = ts => {
+            if (!start) start = ts;
+            const p = Math.min(1, (ts - start) / dur);
+            const eased = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+            const val = from + (to - from) * eased;
+            rollerSlider.value = val; setBlind(val);
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        });
+      }, { threshold: .4 }).observe(rollerWindow);
     }
 
     // ── FAQ ACCORDION ──
