@@ -155,14 +155,26 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:    #f7f3ee;
-      --warm:     #ede6dc;
-      --sand:     #c9b99a;
-      --terracota:#b5634a;
-      --olive:    #6b7c5e;
-      --dark:     #2c2420;
-      --mid:      #6b5f57;
-      --white:    #ffffff;
+      /* --t: 0 = día (claro y cálido) · 1 = noche (oscuro y elegante). Lo controla el slider de la cortina roller. */
+      --t: 0;
+
+      /* SUPERFICIES — interpolan de claro a oscuro */
+      --cream: color-mix(in oklab, #f7f3ee, #14100c calc(var(--t) * 100%));
+      --warm:  color-mix(in oklab, #ede6dc, #1e1812 calc(var(--t) * 100%));
+      --white: color-mix(in oklab, #ffffff, #1b1611 calc(var(--t) * 100%));
+
+      /* TEXTO — interpola de oscuro a claro (al revés que las superficies) */
+      --dark:  color-mix(in oklab, #2c2420, #f4ece1 calc(var(--t) * 100%));
+      --mid:   color-mix(in oklab, #6b5f57, #b8a996 calc(var(--t) * 100%));
+
+      /* ACENTOS — ganan un leve brillo de noche */
+      --sand:      color-mix(in oklab, #c9b99a, #ddcaa6 calc(var(--t) * 100%));
+      --terracota: color-mix(in oklab, #b5634a, #e5876a calc(var(--t) * 100%));
+      --olive:     #6b7c5e;
+
+      /* FIJOS — no cambian con el tema */
+      --ink:     #1a1510;   /* fondos siempre oscuros: galería, CTA, botones sólidos */
+      --on-dark: #f7f3ee;   /* texto/iconos sobre fondos oscuros o sobre acentos */
       --wa:       #25d366;
       --radius:   16px;
       --radius-lg:28px;
@@ -181,6 +193,7 @@
       color: var(--dark);
       line-height: 1.65;
       overflow-x: hidden;
+      transition: background-color .3s linear, color .3s linear;
     }
 
     /* ── SCROLLBAR ── */
@@ -234,13 +247,13 @@
       white-space: nowrap;
     }
     .btn-primary {
-      background: var(--dark);
-      color: var(--white);
+      background: var(--ink);
+      color: var(--on-dark);
     }
     .btn-primary:hover { background: var(--terracota); transform: translateY(-2px); box-shadow: var(--shadow); }
     .btn-wa {
       background: var(--wa);
-      color: var(--white);
+      color: var(--on-dark);
     }
     .btn-wa:hover { background: #1eb358; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.30); }
     .btn-outline {
@@ -248,7 +261,7 @@
       color: var(--dark);
       border: 1.5px solid var(--sand);
     }
-    .btn-outline:hover { background: var(--dark); color: var(--white); border-color: var(--dark); transform: translateY(-2px); }
+    .btn-outline:hover { background: var(--ink); color: var(--on-dark); border-color: var(--ink); transform: translateY(-2px); }
 
     /* ── WHATSAPP FLOAT ── */
     .wa-float {
@@ -260,7 +273,7 @@
       align-items: center;
       gap: 10px;
       background: var(--wa);
-      color: var(--white);
+      color: var(--on-dark);
       padding: 14px 22px 14px 18px;
       border-radius: 50px;
       text-decoration: none;
@@ -290,7 +303,7 @@
       transition: var(--transition);
     }
     header.scrolled {
-      background: rgba(247,243,238,.95);
+      background: color-mix(in oklab, rgba(247,243,238,.95), rgba(20,16,12,.92) calc(var(--t) * 100%));
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 2px 20px rgba(44,36,32,.08);
@@ -585,7 +598,7 @@
     .rollers-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
     .roller-types { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 72px; }
-    .roller-type { background: rgba(255,255,255,.7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    .roller-type { background: color-mix(in oklab, rgba(255,255,255,.7), rgba(29,23,18,.78) calc(var(--t) * 100%)); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
       border: 1px solid rgba(201,185,154,.5); border-radius: var(--radius-lg); padding: 30px 24px;
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
     .roller-type:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--terracota); }
@@ -679,9 +692,9 @@
     /* ── GALLERY ── */
     .gallery {
       padding: 100px 0;
-      background: var(--dark);
+      background: var(--ink);
     }
-    .gallery .section-title { color: var(--cream); }
+    .gallery .section-title { color: var(--on-dark); }
     .gallery .section-label { color: var(--sand); }
     .gallery .section-sub { color: var(--sand); max-width: 480px; }
     .gallery-header {
@@ -723,7 +736,7 @@
     }
     .gallery-item:hover .gallery-overlay { opacity: 1; }
     .gallery-overlay span {
-      color: var(--white);
+      color: var(--on-dark);
       font-size: .9rem;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -779,7 +792,7 @@
     }
     .step:hover .step-num {
       background: var(--terracota);
-      color: var(--white);
+      color: var(--on-dark);
       border-color: var(--terracota);
       transform: scale(1.1);
     }
@@ -822,7 +835,7 @@
       color: var(--dark);
       transition: var(--transition);
     }
-    .testi-btn:hover { background: var(--dark); color: var(--white); border-color: var(--dark); }
+    .testi-btn:hover { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
     .testi-btn:disabled { opacity: .35; cursor: default; }
     .testi-btn:disabled:hover { background: var(--white); color: var(--dark); border-color: var(--sand); }
     .testimonials-wrapper {
@@ -889,7 +902,7 @@
     /* ── CTA FINAL ── */
     .final-cta {
       padding: 120px 0;
-      background: var(--dark);
+      background: var(--ink);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -909,7 +922,7 @@
       font-family: var(--ff-display);
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 300;
-      color: var(--cream);
+      color: var(--on-dark);
       line-height: 1.15;
       max-width: 660px;
       margin: 0 auto 20px;
@@ -948,7 +961,7 @@
       font-family: var(--ff-display);
       font-size: 1.8rem;
       font-weight: 400;
-      color: var(--cream);
+      color: var(--on-dark);
       margin-bottom: 8px;
     }
     .footer-brand p {
@@ -973,7 +986,7 @@
       text-decoration: none;
       transition: var(--transition);
     }
-    .social-link:hover { background: var(--terracota); color: var(--white); }
+    .social-link:hover { background: var(--terracota); color: var(--on-dark); }
     .social-link svg { width: 18px; height: 18px; fill: currentColor; }
 
     .footer-col h4 {
@@ -989,7 +1002,7 @@
       color: var(--mid);
       margin-bottom: 12px;
     }
-    .footer-col li strong { color: var(--cream); font-weight: 400; }
+    .footer-col li strong { color: var(--on-dark); font-weight: 400; }
     .footer-col a {
       color: var(--mid);
       text-decoration: none;
@@ -1095,6 +1108,15 @@
       z-index: 1100; transition: width .12s linear;
     }
 
+    /* ── BRILLO NOCTURNO ── (aparece a medida que la cortina se cierra) */
+    .night-fx {
+      position: fixed; inset: 0; pointer-events: none; z-index: 8;
+      opacity: var(--t); transition: opacity .3s linear; mix-blend-mode: screen;
+      background:
+        radial-gradient(72% 60% at 82% -8%, rgba(229,138,107,.22), transparent 55%),
+        radial-gradient(60% 55% at -6% 108%, rgba(201,185,154,.16), transparent 55%);
+    }
+
     /* ── HERO KEN BURNS ── */
     .hero-visual img { will-change: transform; animation: kenburns 22s ease-in-out infinite alternate; }
     @keyframes kenburns {
@@ -1135,6 +1157,8 @@
 
   <!-- Scroll progress -->
   <div class="scroll-progress" id="scrollProgress"></div>
+  <!-- Capa de brillo nocturno (controlada por el slider de la cortina roller) -->
+  <div class="night-fx" aria-hidden="true"></div>
 
   <!-- WhatsApp Float -->
   <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20un%20trabajo%20de%20tapicería" class="wa-float" target="_blank" rel="noopener">
@@ -1225,15 +1249,15 @@
     <div class="container rollers-inner">
       <!-- Ventana interactiva -->
       <div class="roller-demo reveal-left">
-        <div class="roller-window" id="rollerWindow" style="--b:.55">
+        <div class="roller-window" id="rollerWindow" style="--b:.1">
           <div class="roller-scene"></div>
           <div class="roller-dim"></div>
           <div class="roller-fabric"><div class="roller-rail"></div></div>
           <div class="roller-tube"></div>
         </div>
         <label class="roller-control">
-          <span class="roller-control-label">Desliza y mira cómo controlas la luz</span>
-          <input type="range" id="rollerSlider" min="0" max="100" value="55" aria-label="Subir o bajar la cortina roller para controlar la luz">
+          <span class="roller-control-label">Desliza la cortina y mira cómo cambia la luz de toda la página ✨</span>
+          <input type="range" id="rollerSlider" min="0" max="100" value="10" aria-label="Subir o bajar la cortina roller para controlar la luz de la página">
           <span class="roller-control-ends"><span>Más luz</span><span>Más sombra</span></span>
         </label>
       </div>
@@ -1382,7 +1406,7 @@
           <div class="section-label reveal">Nuestro trabajo</div>
           <h2 class="section-title reveal">Transformamos muebles<br><em style="font-style:italic;color:var(--sand)">en piezas únicas</em></h2>
         </div>
-        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20ver%20más%20trabajos" class="btn btn-outline reveal" style="border-color:var(--mid);color:var(--cream);" target="_blank" rel="noopener">Ver más trabajos</a>
+        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20ver%20más%20trabajos" class="btn btn-outline reveal" style="border-color:var(--mid);color:var(--on-dark);" target="_blank" rel="noopener">Ver más trabajos</a>
       </div>
       <div class="gallery-grid">
         <div class="gallery-item g1 reveal">
@@ -1579,7 +1603,7 @@
         <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20quisiera%20cotizar%20un%20trabajo%20de%20tapicería" class="btn btn-wa" target="_blank" rel="noopener" style="font-size:1.05rem;padding:18px 40px;">
           💬 Hablar por WhatsApp
         </a>
-        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20te%20envío%20fotos%20de%20mi%20mueble" class="btn btn-outline" target="_blank" rel="noopener" style="color:var(--cream);border-color:rgba(201,185,154,.4);">
+        <a href="https://wa.me/56983119586?text=Hola%20Deco%20España,%20te%20envío%20fotos%20de%20mi%20mueble" class="btn btn-outline" target="_blank" rel="noopener" style="color:var(--on-dark);border-color:rgba(201,185,154,.4);">
           📷 Enviar fotos de mi mueble
         </a>
       </div>
@@ -1668,18 +1692,22 @@
       }, { passive: true });
     }
 
-    // ── CORTINAS ROLLER: control de luz ──
+    // ── CORTINAS ROLLER: control de luz + tema día/noche de toda la página ──
     const rollerSlider = document.getElementById('rollerSlider');
     const rollerWindow = document.getElementById('rollerWindow');
     if (rollerSlider && rollerWindow) {
+      const root = document.documentElement;
       const setBlind = v => {
-        const b = Math.min(100, Math.max(0, v)) / 100;
-        rollerWindow.style.setProperty('--b', b);
+        const x = Math.min(100, Math.max(0, v)) / 100;
+        rollerWindow.style.setProperty('--b', x);            // altura de la cortina + oscurecido de la ventana
+        // El tema global tiene una "zona clara" hasta el 15% cerrado; luego oscurece hasta la noche al 100%.
+        const t = Math.min(1, Math.max(0, (x - 0.15) / 0.85));
+        root.style.setProperty('--t', t.toFixed(3));
       };
       rollerSlider.addEventListener('input', e => setBlind(e.target.value));
       setBlind(rollerSlider.value);
 
-      // Auto-demo una sola vez cuando la ventana entra en pantalla
+      // Auto-demo una sola vez: barre día → noche → día para invitar a jugar.
       let demoed = false;
       new IntersectionObserver((entries, obs) => {
         entries.forEach(en => {
@@ -1687,18 +1715,17 @@
           demoed = true;
           obs.disconnect();
           if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-          const from = 12, to = 58, dur = 1600;
+          const base = 10, amp = 82, dur = 3400;
           let start = null;
-          rollerSlider.value = from; setBlind(from);
-          const step = ts => {
+          const tick = ts => {
             if (!start) start = ts;
             const p = Math.min(1, (ts - start) / dur);
-            const eased = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-            const val = from + (to - from) * eased;
+            const val = base + amp * Math.sin(p * Math.PI); // 10 → 92 → 10
             rollerSlider.value = val; setBlind(val);
-            if (p < 1) requestAnimationFrame(step);
+            if (p < 1) requestAnimationFrame(tick);
+            else { rollerSlider.value = base; setBlind(base); }
           };
-          requestAnimationFrame(step);
+          requestAnimationFrame(tick);
         });
       }, { threshold: .4 }).observe(rollerWindow);
     }
